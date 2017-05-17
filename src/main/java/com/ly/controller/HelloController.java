@@ -6,6 +6,7 @@ import com.ly.utils.ResultUtil;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,8 +54,13 @@ public class HelloController {
     public String image(){
         return "hello world <img src=\"images/demo.jpg\">";
     }
-    @RequestMapping("/index")
-    public String index(){
-        return "index";
+//    @RequestMapping("/index")
+//    public String index(){
+//        return "index";
+//    }
+    @RequestMapping("/testTh")
+    public String testTh(ModelMap map){
+        map.addAttribute("msg","Hello, rensanning! @Thymeleaf");
+        return "test_th";
     }
 }
